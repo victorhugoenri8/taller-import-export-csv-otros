@@ -12,8 +12,8 @@ def export_csv(request):
     # Import-Export library
     author_resource = resources.modelresource_factory(model=Letras)()
     dataset = author_resource.export()
-    response = HttpResponse(dataset.xls, content_type='text/xls')
-    response['Content-Disposition'] = 'atachment; filename="author_library.xls"'
+    response = HttpResponse(dataset.csv, content_type='text/csv')
+    response['Content-Disposition'] = 'atachment; filename="author_library.csv"'
     return response
 
 
